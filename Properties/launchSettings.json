@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Fruit-Scale (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "Fruit-Scale (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
