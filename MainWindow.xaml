@@ -13,7 +13,100 @@
         <MicaBackdrop />
     </Window.SystemBackdrop>
 
-    <Grid>
+    <Grid
+        Padding="20"
+        RowSpacing="20"
+        ColumnSpacing="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="100"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="auto"/>
+        </Grid.ColumnDefinitions>
+        
+        <Button
+            Grid.Row="0"
+            Grid.Column="0"
+            VerticalAlignment="Stretch"
+            HorizontalAlignment="Stretch"
+            Content="Bananas"
+            Click="Button_Click"/>
+        
+        <Button
+            Grid.Row="0"
+            Grid.Column="1"
+            VerticalAlignment="Stretch"
+            HorizontalAlignment="Stretch"
+            Content="Apples"
+            Click="Button_Click"/>
+        
+        <Button
+            Grid.Row="1"
+            Grid.Column="0"
+            VerticalAlignment="Stretch"
+            HorizontalAlignment="Stretch"
+            Content="Oranges"
+            Click="Button_Click"/>
+        
+        <Button
+            Grid.Row="1"
+            Grid.Column="1"
+            VerticalAlignment="Stretch"
+            HorizontalAlignment="Stretch"
+            Content="Grapes"
+            Click="Button_Click"/>
+
+        <Button
+            Grid.Row="2"
+            Grid.Column="0"
+            VerticalAlignment="Stretch"
+            HorizontalAlignment="Stretch"
+            Content="Cucumber"
+            Click="Button_Click"/>
+
+        <Button
+            Grid.Row="2"
+            Grid.Column="1"
+            VerticalAlignment="Stretch"
+            HorizontalAlignment="Stretch"
+            Content="Tomatoes"
+            Click="Button_Click"/>
+
+        <StackPanel
+            Grid.Column="2"
+            Grid.Row="0"
+            Grid.RowSpan="4"
+            Padding="20"
+            Spacing="20">
+
+            <TextBlock
+                Text="Weight"/>
+
+            <TextBox Text="0.00 Kg"></TextBox>
+            
+            <TextBlock
+                Text="€/kg"/>
+
+            <TextBox Text="0.00 €"></TextBox>
+
+            <TextBlock
+                Text="Total €"/>
+
+            <TextBox Text="0.00 €"></TextBox>
+
+            <Button
+                Content="Admin"
+                x:Name="admin_button"
+                Click="admin_button_Click"/>   
+
+
+        </StackPanel>
+
 
     </Grid>
 </Window>
