@@ -27,8 +27,10 @@
             <ColumnDefinition Width="100"/>
             <ColumnDefinition Width="100"/>
             <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
         </Grid.ColumnDefinitions>
-        
+
+        <!--Item Buttons-->
         <Button
             Grid.Row="0"
             Grid.Column="0"
@@ -36,7 +38,7 @@
             HorizontalAlignment="Stretch"
             Content="Bananas"
             Click="Button_Click"/>
-        
+
         <Button
             Grid.Row="0"
             Grid.Column="1"
@@ -44,7 +46,7 @@
             HorizontalAlignment="Stretch"
             Content="Apples"
             Click="Button_Click"/>
-        
+
         <Button
             Grid.Row="1"
             Grid.Column="0"
@@ -52,7 +54,7 @@
             HorizontalAlignment="Stretch"
             Content="Oranges"
             Click="Button_Click"/>
-        
+
         <Button
             Grid.Row="1"
             Grid.Column="1"
@@ -76,7 +78,7 @@
             HorizontalAlignment="Stretch"
             Content="Tomatoes"
             Click="Button_Click"/>
-
+        <!--Information box-->
         <StackPanel
             Grid.Column="2"
             Grid.Row="0"
@@ -84,29 +86,67 @@
             Padding="20"
             Spacing="20">
 
-            <TextBlock
-                Text="Weight"/>
+            <TextBox 
+                Header="Weight"
+                x:Name="weightBox"
+                Text="0.00 kg"/>
 
-            <TextBox Text="0.00 Kg"></TextBox>
-            
-            <TextBlock
-                Text="€/kg"/>
+            <TextBox 
+                Header="Price €/kg"
+                x:Name="priceBox"
+                Text="0.00 €"/>
 
-            <TextBox Text="0.00 €"></TextBox>
+            <TextBox
+                Header="Total price"
+                x:Name="totalBox"
+                Text="0.00 €"/>
+        </StackPanel>
+        <!--Admin Panel-->
 
-            <TextBlock
-                Text="Total €"/>
+        <StackPanel
+            x:Name="adminPanel"
+            Grid.Column="3"
+            Grid.Row="0"
+            Grid.RowSpan="4"
+            Padding="20"
+            Spacing="20">
 
-            <TextBox Text="0.00 €"></TextBox>
+            <TextBox
+                Header="Item Name"
+                x:Name="itemNameBox"/>
+
+            <NumberBox
+                Header="€/Kg"
+                x:Name="newPriceBox"
+                Value="0"/>
 
             <Button
-                Content="Admin"
-                x:Name="admin_button"
-                Click="admin_button_Click"/>   
+                Content="Add"
+                HorizontalAlignment="Stretch"
+                x:Name="AddButton"
+                Click="AddButton_Click"/>
+
+            <ListView 
+                x:Name="productListView" 
+                Height="500">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal" Spacing="10">
+                            <TextBlock Text="{Binding Name}" Width="100"/>
+                            <TextBlock Text="{Binding Price}"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Button
+                Content="Remove"
+                x:Name="RemoveButton"
+                HorizontalAlignment="Stretch"
+                Click="RemoveButton_Click"/>
 
 
         </StackPanel>
-
 
     </Grid>
 </Window>
